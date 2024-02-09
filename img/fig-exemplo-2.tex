@@ -1,0 +1,32 @@
+
+\begin{tikzpicture}[scale=0.8]
+\node[circle,draw,fill=black!60,label=left:$x$] (v1) at (-1,0) {};
+\node[circle,draw,fill,label=left:$v_1$] (v2) at (-1.5,0.6) {};
+\node[circle,draw,fill,label=left:$v_2$] (v3) at (-1.5,-0.6) {};
+
+\draw  (v1) edge (v2);
+\draw  (v1) edge (v3);
+
+\node[circle,draw,fill=black!30,label=$v^\prime$] (v4) at (-0.5,1) {};
+\node[circle,draw,fill=black!30,label=$w^\prime$] (v9) at (0,0) {};
+\node[circle,draw,fill=black!30,label=$u^\prime$] (v8) at (-0.5,-1) {};
+\node[circle,draw,label=$v$] (v5) at (0.5,1) {};
+\node[circle,draw,label=$w$] (v6) at (1,0) {};
+\node[circle,draw,label=$u$] (v7) at (0.5,-1) {};
+
+\draw[dotted]  (-1.5,0) ellipse (1 and 1);
+\draw[dotted]  (-1,0) ellipse (1.5 and 1.5);
+\draw[dotted]  (-0.5,0) ellipse (2 and 2);
+
+\draw  (v2) edge (v4);
+\draw  (v5) edge (v4);
+\draw  (v5) edge (v6);
+\draw  (v7) edge (v6);
+\draw  (v7) edge (v8);
+\draw  (v3) edge (v8);
+\draw  (v6) edge (v9);
+\draw  (v9) edge (v1);
+\node at (-1.5,1.1) {\tiny $H$};
+\node at (-1,1.6) {\tiny $N$};
+\node at (-0.5,2.1) {\tiny $O$};
+\end{tikzpicture}

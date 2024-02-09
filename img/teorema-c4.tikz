@@ -1,0 +1,38 @@
+\begin{tikzpicture}
+	\begin{pgfonlayer}{nodelayer}
+		\node [style=empty] (0) at (-10, 6) {};
+		\node [style=empty] (1) at (-9, 6) {};
+		\node [style=empty] (2) at (-8, 6) {};
+		\node [style=empty] (3) at (-7, 6) {};
+		\node [style=empty] (4) at (-6, 6) {};
+		\node [style=empty] (5) at (-10, 5) {};
+		\node [style=empty] (6) at (-9, 5) {};
+		\node [style=empty] (7) at (-8, 5) {};
+		\node [style=empty] (8) at (-7, 5) {};
+		\node [style=empty] (9) at (-6, 5) {};
+		\node [style=empty] (10) at (-10, 4) {};
+		\node [style=empty] (11) at (-9, 4) {};
+		\node [style=empty] (12) at (-8, 4) {};
+		\node [style=empty] (13) at (-7, 4) {};
+		\node [style=empty] (14) at (-6, 4) {};
+		\node [style=none] (15) at (-10, 7) {};
+		\node [style=none] (16) at (-9, 7) {};
+		\node [style=none] (17) at (-8, 7) {};
+		\node [style=none] (18) at (-7, 7) {};
+		\node [style=none] (19) at (-6, 7) {};
+		\node [style=none] (20) at (-5, 6) {};
+		\node [style=none] (21) at (-5, 4) {};
+		\node [style=none] (22) at (-5, 4) {Caso 2};
+		\node [style=none] (23) at (-5, 6) {Caso 1};
+		\node [style=none] (24) at (-10, 7) {$v_1$};
+		\node [style=none] (25) at (-9, 7) {$v_2$};
+		\node [style=none] (26) at (-8, 7) {$v_3$};
+		\node [style=none] (27) at (-7, 7) {$v_4$};
+		\node [style=none] (28) at (-6, 7) {v_5};
+	\end{pgfonlayer}
+	\begin{pgfonlayer}{edgelayer}
+		\draw (0) to (1);
+		\draw (5) to (6);
+		\draw (7) to (8);
+	\end{pgfonlayer}
+\end{tikzpicture}

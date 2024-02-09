@@ -1,0 +1,38 @@
+% Referência:  https://github.com/brydon-zz/circulant/blob/master/Circulant.tex
+
+\newcommand{\PIVAL}{3.14159265358979323846264338} %There is no easily accessible constant
+\newcounter{i} % Counter for the while loop
+%The Circulant Graph Drawing Method
+\newcommand{\Circulant}[2] { 						% Accepts 2 argument, the number of nodes, and the list of vertices
+	\begin{tikzpicture}
+	\setcounter{i}{0}
+	\whiledo{\value{i}<#1}{  						% Start counting through the nodes 
+		\FPmul\tempA{2}{\thei} 						% For the X,Y Formulae start with 2*i
+		\FPdiv\tempB{\PIVAL}{#1}						% pi/(nodes)
+		\FPmul\tempC{\tempA}{\tempB}					% 2i*pi/(nodes)
+		\FPcos\varX{\tempC} 							% x=cos(2i*pi/nodes)
+		\FPsin\varY{\tempC} 							% y=sin(2i*pi/nodes)
+		\stepcounter{i} 								% i++ (i.e. i, now equals 1)
+		\node[label=\arabic{i}] (\thei) at (\varX,\varY)[place]{}; 	% Draw node i at x,y
+		\foreach \x in {#2} { 						% For all the variables in the vertex list
+			\pgfmathparse{mod(\x+\thei,#1)} 			% Do the modular count forward
+			\let\tempD\pgfmathresult
+			\pgfmathparse{mod(\thei-\x,#1)} 			% And the modular count backward
+			\let\tempE\pgfmathresult
+			\ifthenelse{\lengthtest{\tempE pt < 1 pt}}{\FPadd\tempE{\tempE}{#1}}{}
+			\ifthenelse{\lengthtest{\tempD pt < 1 pt}}{\FPadd\tempD{\tempD}{#1}}{}
+													% Fix some mod problems with 0 or negative numbers
+			\ifthenelse{\lengthtest{\tempE pt > \thei pt}}{}{\draw [] (\thei) to (\tempE)};
+			\ifthenelse{\lengthtest{\tempD pt > \thei pt}}{}{\draw [] (\thei) to (\tempD)};
+													% And draw the lines!
+		}
+	}
+	\end{tikzpicture}
+}
+
+\tikzstyle{place}=[circle,draw=black!100,fill=black!100,thick,inner sep=0pt,minimum size=1mm]
+\tikzstyle{left}=[>=latex,<-,semithick]
+\tikzstyle{right}=[>=latex,->,semithick]
+\tikzstyle{nleft}=[>=latex,-,semithick]
+\tikzstyle{nright}=[>=latex,-,semithick]
+% Defines different tix styles

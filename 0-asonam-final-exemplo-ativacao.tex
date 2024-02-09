@@ -1,0 +1,253 @@
+\begin{frame}{Preliminares: Exemplo de ativação}
+    \begin{columns}
+        \begin{column}{.45\textwidth}
+            \begin{itemize}
+                \item $f(v)=2$
+                      % \tightlist
+                      % \item \emph{Activation process}:
+                      %       \begin{itemize}
+                      %           \tightlist
+                      %           \item $S=\{1,2\}$
+                      %           \item \(I^0{[}S{]}=\{1,2\}\)
+                      %           \item $I^1{[}S{]}=\{1,2\} \cup \{3\}$
+                      %           \item $I^2{[}S{]}=\{1,2\} \cup \{3\} \cup \{4\}$
+                      %           \item $I^3{[}S{]}=\{1,2\} \cup \{3\} \cup \{4\}$
+                      %           \item $I^4=I^3$ then $I^*=I^3$
+                      %       \end{itemize}
+                      % \item $I^*{[}S{]}=V(G)$ then $S$ is a target set.
+            \end{itemize}
+        \end{column}
+        \begin{column}{.45\textwidth}
+            % \resizebox{1\linewidth}{!}{% Resize table to fit within 
+            \begin{tikzpicture}[scale=0.7]
+                \centering
+                % /dados/nuvem/drive/Documentos/tmp/tikzsymbols.pdf
+                % \Smiley \Sadey \Neutrey \Changey 
+                \begin{pgfonlayer}{nodelayer}
+                    \node [style=empty,inner sep=0pt,label=$0$] (0) at (0, 6) {\Xey[]};
+                    \node [style=empty,inner sep=0pt,label=below:$1$] (1) at (1, 0) {\Xey};
+                    \node [style=empty,inner sep=0pt,label=below:$2$] (2) at (3, 0) {\Xey};
+                    \node [style=empty,inner sep=0pt,label=$3$] (3) at (3, 4) {\Xey};
+
+                    \node [style=empty,inner sep=0pt,label=$4$] (4) at (-3.25, 4) {\Xey};
+                    \node [style=empty,inner sep=0pt,label=below:$5$] (5) at (-3.25, 0) {\Xey};
+                    \node [style=empty,inner sep=0pt,label=below:$6$] (6) at (-1, 0) {\Xey};
+                \end{pgfonlayer}
+                \begin{pgfonlayer}{edgelayer}
+                    \draw (0) to (1);
+                    \draw (1) to (2);
+                    \draw (2) to (3);
+                    \draw (3) to (0);
+                    \draw (1) to (3);
+                    \draw (6) to (0);
+                    \draw (4) to (0);
+                    \draw (4) to (5);
+                    \draw (5) to (6);
+                    \draw (6) to (4);
+                    \draw (5) to (0);
+                    \draw (6) to (0);
+                    \draw (4) to (0);
+                    \draw (4) to (5);
+                    \draw (5) to (6);
+                    \draw (6) to (4);
+                    \draw (5) to (0);
+                \end{pgfonlayer}
+            \end{tikzpicture}
+            % }
+        \end{column}
+    \end{columns}
+\end{frame}
+
+\begin{frame}{Preliminares: Exemplo de ativação}
+    \begin{columns}
+        \begin{column}{.45\textwidth}
+            \begin{itemize}
+                \item $f(v)=2$
+                      \tightlist
+                \item \emph{Processo de ativação}:
+                      \begin{itemize}
+                          \tightlist
+                          \item $S=\{1,2\}$
+                          \item \textbf{\(I^0{[}S{]}=\{1,2\}\)}
+                                %   \item $I^1{[}S{]}=\{1,2\} \cup \{3\}$
+                                %   \item $I^2{[}S{]}=\{1,2\} \cup \{3\} \cup \{4\}$
+                                %   \item $I^3{[}S{]}=\{1,2\} \cup \{3\} \cup \{4\}$
+                                %   \item $I^4=I^3$ then $I^*=I^3$
+                      \end{itemize}
+                      % \item $I^*{[}S{]}=V(G)$ then $S$ is a target set.
+            \end{itemize}
+        \end{column}
+        \begin{column}{.45\textwidth}
+            \begin{tikzpicture}[scale=0.7]
+                % /dados/nuvem/drive/Documentos/tmp/tikzsymbols.pdf
+                % \Smiley \Sadey \Neutrey \Changey 
+                \begin{pgfonlayer}{nodelayer}
+                    \node [style=empty,inner sep=0pt,label=$0$] (0) at (0, 6) {\Xey};
+                    \node [style=empty,inner sep=1pt,label=below:$1$] (1) at (0, 0) {\Smiley[][yellow]};
+                    \node [style=empty,inner sep=1pt,label=below:$2$] (2) at (3, 0) {\Smiley[][yellow]};
+                    \node [style=empty,inner sep=0pt,label=$3$] (3) at (3, 4) {\Xey}; \node [style=empty,inner sep=0pt,label=$4$] (4) at (-3.25, 4) {\Xey}; \node [style=empty,inner sep=0pt,label=below:$5$] (5) at (-3.25, 0) {\Xey}; \node [style=empty,inner sep=0pt,label=below:$6$] (6) at (-1, 0) {\Xey};
+
+                    \node [style=empty,inner sep=0pt,label=$4$] (4) at (-3.25, 4) {\Xey};
+                    \node [style=empty,inner sep=0pt,label=below:$5$] (5) at (-3.25, 0) {\Xey};
+                    \node [style=empty,inner sep=0pt,label=below:$6$] (6) at (-1, 0) {\Xey};
+                \end{pgfonlayer}
+                \begin{pgfonlayer}{edgelayer}
+                    \draw (0) to (1);
+                    \draw (1) to (2);
+                    \draw (2) to (3);
+                    \draw (3) to (0);
+                    \draw (1) to (3);
+                    \draw (6) to (0);
+                    \draw (4) to (0);
+                    \draw (4) to (5);
+                    \draw (5) to (6);
+                    \draw (6) to (4);
+                    \draw (5) to (0);
+                \end{pgfonlayer}
+            \end{tikzpicture}
+        \end{column}
+    \end{columns}
+\end{frame}
+
+\begin{frame}{Preliminares: Exemplo de ativação}
+    \begin{columns}
+        \begin{column}{.45\textwidth}
+            \begin{itemize}
+                \item $f(v)=2$
+                      \tightlist
+                \item \emph{Processo de ativação}:
+                      \begin{itemize}
+                          \tightlist
+                          \item $S=\{1,2\}$
+                          \item \(I^0{[}S{]}=\{1,2\}\)
+                          \item $I^1{[}S{]}=\{1,2\} \cup \{3\}$
+                                %   \item $I^2{[}S{]}=\{1,2\} \cup \{3\} \cup \{4\}$
+                                %   \item $I^3{[}S{]}=\{1,2\} \cup \{3\} \cup \{4\}$
+                                %   \item $I^4=I^3$ then $I^*=I^3$
+                      \end{itemize}
+                      % \item $I^*{[}S{]}=V(G)$ then $S$ is a target set.
+            \end{itemize}
+        \end{column}
+        \begin{column}{.45\textwidth}
+            \begin{tikzpicture}[scale=0.7]
+                % /dados/nuvem/drive/Documentos/tmp/tikzsymbols.pdf
+                % \Smiley \Sadey \Neutrey \Changey 
+                \begin{pgfonlayer}{nodelayer}
+                    \node [style=empty,inner sep=0pt,label=$0$] (0) at (0, 6) {\Neutrey};
+                    \node [style=empty,inner sep=1pt,label=below:$1$] (1) at (0, 0) {\Smiley[][yellow]};
+                    \node [style=empty,inner sep=1pt,label=below:$2$] (2) at (3, 0) {\Smiley[][yellow]};
+                    \node [style=empty,inner sep=0pt,label=$3$] (3) at (3, 4) {\Smiley[][yellow]};
+                    \node [style=empty,inner sep=0pt,label=$4$] (4) at (-3.25, 4) {\Xey}; \node [style=empty,inner sep=0pt,label=below:$5$] (5) at (-3.25, 0) {\Xey}; \node [style=empty,inner sep=0pt,label=below:$6$] (6) at (-1, 0) {\Xey};
+                \end{pgfonlayer}
+                \begin{pgfonlayer}{edgelayer}
+                    \draw (0) to (1);
+                    \draw (1) to (2);
+                    \draw (2) to (3);
+                    \draw (3) to (0);
+                    \draw (1) to (3);
+                    \draw (6) to (0);
+                    \draw (4) to (0);
+                    \draw (4) to (5);
+                    \draw (5) to (6);
+                    \draw (6) to (4);
+                    \draw (5) to (0);
+                \end{pgfonlayer}
+            \end{tikzpicture}
+        \end{column}
+    \end{columns}
+\end{frame}
+
+
+\begin{frame}{Preliminares: Exemplo de ativação}
+    \begin{columns}
+        \begin{column}{.45\textwidth}
+            \begin{itemize}
+                \item $f(v)=2$
+                      \tightlist
+                \item \emph{Processo de ativação}:
+                      \begin{itemize}
+                          \tightlist
+                          \item $S=\{1,2\}$
+                          \item \(I^0{[}S{]}=\{1,2\}\)
+                          \item $I^1{[}S{]}=\{1,2\} \cup \{3\}$
+                          \item $I^2{[}S{]}=\{1,2,3\} \cup \{0\}$
+                                %   \item $I^3{[}S{]}=\{1,2\} \cup \{3\} \cup \{4\}$
+                                %   \item $I^4=I^3$ then $I^*=I^3$
+                      \end{itemize}
+                      % \item $I^*{[}S{]}=V(G)$ then $S$ is a target set.
+            \end{itemize}
+        \end{column}
+        \begin{column}{.45\textwidth}
+            \begin{tikzpicture}[scale=0.7]
+                % /dados/nuvem/drive/Documentos/tmp/tikzsymbols.pdf
+                % \Smiley \Sadey \Neutrey \Changey 
+                \begin{pgfonlayer}{nodelayer}
+                    \node [style=empty,inner sep=0pt,label=$0$] (0) at (0, 6) {\Smiley[][yellow]};
+                    \node [style=empty,inner sep=1pt,label=below:$1$] (1) at (0, 0) {\Smiley[][yellow]};
+                    \node [style=empty,inner sep=1pt,label=below:$2$] (2) at (3, 0) {\Smiley[][yellow]};
+                    \node [style=empty,inner sep=0pt,label=$3$] (3) at (3, 4) {\Smiley[][yellow]}; \node [style=empty,inner sep=0pt,label=$4$] (4) at (-3.25, 4) {\Neutrey}; \node [style=empty,inner sep=0pt,label=below:$5$] (5) at (-3.25, 0) {\Neutrey}; \node [style=empty,inner sep=0pt,label=below:$6$] (6) at (-1, 0) {\Neutrey};
+                \end{pgfonlayer}
+                \begin{pgfonlayer}{edgelayer}
+                    \draw (0) to (1);
+                    \draw (1) to (2);
+                    \draw (2) to (3);
+                    \draw (3) to (0);
+                    \draw (1) to (3);
+                    \draw (6) to (0);
+                    \draw (4) to (0);
+                    \draw (4) to (5);
+                    \draw (5) to (6);
+                    \draw (6) to (4);
+                    \draw (5) to (0);
+                \end{pgfonlayer}
+            \end{tikzpicture}
+        \end{column}
+    \end{columns}
+\end{frame}
+
+\begin{frame}{Preliminares: Exemplo de ativação}
+    \begin{columns}
+        \begin{column}{.5\textwidth}
+            \begin{itemize}
+                \item $f(v)=2$
+                      \tightlist
+                \item \emph{Processo de ativação}:
+                      \begin{itemize}
+                          \tightlist
+                          \item $S=\{1,2\}$
+                          \item \(I^0{[}S{]}=\{1,2\}\)
+                          \item $I^1{[}S{]}=\{1,2\} \cup \{3\}$
+                          \item $I^2{[}S{]}=\{1,2,3\} \cup \{0\}$
+                          \item $I^3{[}S{]}=\{1,2,3,0\}$
+                          \item $I^3=I^2$ então $I^*=I^2$
+                      \end{itemize}
+                \item $I^*{[}S{]}=V(G)$ então $S$ é um conjunto alvo.
+            \end{itemize}
+        \end{column}
+        \begin{column}{.45\textwidth}
+            \begin{tikzpicture}[scale=0.7]
+                % /dados/nuvem/drive/Documentos/tmp/tikzsymbols.pdf
+                % \Smiley \Sadey \Neutrey \Changey 
+                \begin{pgfonlayer}{nodelayer}
+                    \node [style=empty,inner sep=0pt,label=$0$] (0) at (0, 6) {\Smiley[][yellow]};
+                    \node [style=empty,inner sep=1pt,label=below:$1$] (1) at (0, 0) {\Smiley[][yellow]};
+                    \node [style=empty,inner sep=1pt,label=below:$2$] (2) at (3, 0) {\Smiley[][yellow]};
+                    \node [style=empty,inner sep=0pt,label=$3$] (3) at (3, 4) {\Smiley[][yellow]}; \node [style=empty,inner sep=0pt,label=$4$] (4) at (-3.25, 4) {\Neutrey}; \node [style=empty,inner sep=0pt,label=below:$5$] (5) at (-3.25, 0) {\Neutrey}; \node [style=empty,inner sep=0pt,label=below:$6$] (6) at (-1, 0) {\Neutrey};
+                \end{pgfonlayer}
+                \begin{pgfonlayer}{edgelayer}
+                    \draw (0) to (1);
+                    \draw (1) to (2);
+                    \draw (2) to (3);
+                    \draw (3) to (0);
+                    \draw (1) to (3);
+                    \draw (6) to (0);
+                    \draw (4) to (0);
+                    \draw (4) to (5);
+                    \draw (5) to (6);
+                    \draw (6) to (4);
+                    \draw (5) to (0);
+                \end{pgfonlayer}
+            \end{tikzpicture}
+        \end{column}
+    \end{columns}
+\end{frame}
